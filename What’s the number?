@@ -1,0 +1,33 @@
+import random
+def guessthenumber(num_guesses,score,c):
+
+    if num_guesses>5:
+        print ("Your final score is ",0)
+
+
+    user_input=int(input("Enter your number = "))
+
+    if user_input==c:
+        print("Congratulations! your Guess is correct ")
+        print( "Your final score is ", score)
+
+    elif user_input>c:
+        print("Ans is too high")
+        num_guesses+=1
+        score-=20
+        guessthenumber(num_guesses,score,c)
+           
+
+    elif user_input<c:
+        print("Ans is too Low")
+        num_guesses += 1
+        score -= 20
+        guessthenumber(num_guesses, score,c)
+
+
+num_guesses=1
+score=100
+a=0
+b=10
+c=random.randint(a,b)
+print(guessthenumber(num_guesses,score,c))
